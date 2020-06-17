@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Project-Wartemis/bot-tictactoe#readme",
   "dependencies": {
-    "wartemis": "^1.0.4"
+    "wartemis": "^1.0.5"
   },
   "devDependencies": {
     "tslint": "^6.1.2",

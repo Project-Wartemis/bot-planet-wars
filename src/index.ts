@@ -34,10 +34,17 @@ interface ActionMove {
   ships: number; // how many ships to send
 }
 
-new Bot('Planet Wars', 'Demobot')
-  .onError(console.error)
-  .onState(raw => {
-    const state: State = Object.assign({} as State, raw);
+class BotPlanetWars extends Bot {
+
+  constructor() {
+    super('Planet Wars', 'Demobot-test');
+  }
+
+  handleError(error: string): void {
+    console.error(error);
+  }
+
+  handleState(state: State): Action {
     const action: Action = { moves: [] };
     const target = state.planets.find(planet => planet.player !== 1);
     if(!target) {
@@ -52,5 +59,8 @@ new Bot('Planet Wars', 'Demobot')
       });
     }
     return action;
-  })
-  .start();
+  }
+}
+
+const bot = new BotPlanetWars();
+bot.start();

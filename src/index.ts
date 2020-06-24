@@ -37,7 +37,7 @@ interface ActionMove {
 class BotPlanetWars extends Bot {
 
   constructor() {
-    super('Planet Wars', 'Demobot-test');
+    super('Planet Wars', 'Demobot');
   }
 
   handleError(error: string): void {
